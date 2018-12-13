@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Formulaire</title>
+	<meta charset="utf-8">
+
+	<style>
+
+
+		input:invalid { background: red; }
+		input:valid { background: green; }
+		input:required { background: orange; }
+
+		@media screen and (max-width: 600px){
+			input { width: 100%; }
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<form id="identity-form" onsubmit="o_html5.value = html5.value; return false;">
+		<div>
+			<label for="nom">Nom *</label>
+			<input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+		</div>
+		<div>
+			<label for="prenom">Prénom *</label>
+			<input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+		</div>
+		<div>
+			<label for="datenaissance">Date de naissance</label>
+			<input type="date" id="datenaissance" name="datenaissance">
+		</div>
+		<div>
+			<label for="adresse">Adresse</label>
+			<input type="text" id="adresse" name="adresse" placeholder="Entrez votre adresse">
+		</div>
+		<div>
+			<label for="codepostal">Code postal</label>
+			<input type="text" id="codepostal" name="codepostal" placeholder="Entrez votre code postal" pattern="[0-9]{5}" title="Doit être composé de 5 caractères numériques">
+		</div>
+		<div>
+			<label for="ville">Ville</label>
+			<input type="text" id="ville" name="ville" placeholder="Entrez votre ville">
+		</div>
+		<div>
+			<label for="tel">Téléphone</label>
+			<input type="tel" id="tel" name="tel" placeholder="Entrez votre téléphone">
+		</div>
+		<div>
+			<label for="email">Adresse e-mail *</label>
+			<input type="email" id="email" name="email" placeholder="Entrez votre e-mail" required>
+		</div>
+		<div>
+			<label for="nbenfants">Nombre d'enfants</label>
+			<input type="number" id="nbenfants" name="nbenfants" placeholder="Entrez votre nombre d'enfants">
+		</div>
+		<div>
+			<label for="couleur">Couleur préférée</label>
+			<input type="color" id="couleur" name="couleur">
+		</div>
+		<div>
+			<label>Niveau en HTML5</label>
+			<input type="range" id="html5" name="html5" value="0" min="0" max="5" step="1">
+		</div>
+		<div>
+			<button type="submit">Envoyer</button>
+		</div>
+	</form>
+
+	Niveau en HTML5 : <output for="html5" name="o_html5" form="identity-form"></output>/5
+
+</body>
+</html>
